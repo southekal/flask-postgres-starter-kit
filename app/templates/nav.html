@@ -1,0 +1,50 @@
+<header class="header-global">
+  <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+    <div class="container">
+      <a class="navbar-brand mr-lg-5" href="/">
+        <!-- <img alt="image" src="static/img/brand/white.png"> -->
+        <span class="display-4 mb-0 text-lowercase" style="font-weight: bold; letter-spacing: -1px;">example</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbar_global">
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a href="/">
+                <!-- <img alt="image" src="static/img/brand/blue.png"> -->
+                <span class="display-4 mb-0 text-lowercase" style="font-weight: bold; letter-spacing: -2px;">example</span>
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+          <li class="nav-item dropdown">
+            <a href="#product" class="nav-link font-weight-bold text-uppercase">
+              Product
+            </a>
+          </li>
+        </ul> -->
+        <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+          
+          <li class="nav-item d-lg-block ml-lg-4">
+            <a href="{{ url_for('auth.login') }}" class="btn btn-neutral btn-icon">
+              <span class="nav-link-inner--text">Login</span>
+              <span class="btn-inner--icon">
+                <span data-feather="log-in">
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

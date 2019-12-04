@@ -1,0 +1,55 @@
+<form class="form" method="POST" action="{{ url_for('auth.register') }}">
+  {{ form.csrf_token }}
+  <div class="form-group">
+    <div class="input-group input-group-alternative mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><span data-feather="edit-2"></span></span>
+      </div>
+      {{ form.name(class_="form-control form-control-lg", placeholder=form.name.label.text) }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    {% for error in form.email.errors %}
+      <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+    <div class="input-group input-group-alternative mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><span data-feather="mail"></span></span>
+      </div>
+      {{ form.email(class_="form-control form-control-lg", placeholder=form.email.label.text) }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><span data-feather="key"></span></span>
+      </div>
+      {{ form.password(class_="form-control form-control-lg", placeholder=form.password.label.text) }}
+    </div>
+  </div>
+
+  <div class="form-group">
+    
+    {{ form.time_zone(class_="form-control") }}
+
+    <div class="text-muted font-italic">
+      <small>helps send you reminders at the right time</small>
+    </div>
+  </div>
+  
+  <!-- <div class="row my-4">
+    <div class="col-12">
+      <div class="custom-control custom-control-alternative custom-checkbox">
+        <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+        <label class="custom-control-label" for="customCheckRegister"><span>I agree with the <a href="#">Privacy Policy</a></span></label>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="text-center">
+    {{ form.submit(class_="btn btn-lg btn-primary mt-4") }}
+  </div>
+</form>
+  

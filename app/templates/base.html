@@ -1,0 +1,84 @@
+<!--
+
+=========================================================
+* Argon Design System - v1.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/argon-design-system
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <title>{% block title %}{% endblock %} - nindio</title>
+      <!-- Favicon -->
+      <!-- <link href="static/img/brand/favicon.png" rel="icon" type="image/png"> -->
+      <!-- Fonts -->
+      <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> -->
+      <link href="https://fonts.googleapis.com/css?family=Lato|Titillium+Web:300,400,600,700" rel="stylesheet">
+      <!-- Icons -->
+      <link href="{{ url_for('static', filename='vendor/nucleo/css/nucleo.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+      <!-- Loading Overlay -->
+      <link type="text/css" href="{{ url_for('static', filename='css/base/loading-overlay.css') }}" rel="stylesheet">
+      <!-- Argon CSS -->
+      <link type="text/css" href="{{ url_for('static', filename='css/argon.css', v='1.1.0') }}" rel="stylesheet">
+      <link type="text/css" href="{{ url_for('static', filename='css/jquery-ui.min.css') }}" rel="stylesheet">
+      
+      <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+      <!-- Mixpanel Tracking -->
+      <script>
+        window.appConfig = {
+          passed_mixpanel_id: '{{ config.MIXPANEL_PROJECT_ID }}'
+        }
+      </script>
+      <script src="{{ url_for('static', filename='js/base/mp_tracking.js') }}"></script>
+
+      {% block custom_script_in_head %} {% endblock %}
+
+    </head>
+
+    <body>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert alert-warning text-center" role="alert">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        
+        {% block content %} {% endblock %}
+
+        <!-- Core -->
+        <script src="{{ url_for('static', filename='vendor/jquery-ui/jquery-ui.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendor/popper/popper.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendor/bootstrap/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendor/headroom/headroom.min.js') }}"></script>
+        <!-- Optional JS -->
+        <script src="{{ url_for('static', filename='vendor/onscreen/onscreen.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendor/nouislider/js/nouislider.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+        <!-- Argon JS -->
+        <script src="{{ url_for('static', filename='js/argon.js', v='1.1.0') }}"></script>
+        <!-- Icons -->
+        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+        <script>
+          feather.replace()
+        </script>
+
+        {% block custom_js %} {% endblock %}
+        
+    </body>
+
+</html>

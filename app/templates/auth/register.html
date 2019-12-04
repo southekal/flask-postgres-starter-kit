@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %} 
+  Register
+{% endblock %}
+
+{% block content %}
+  <main>
+    <section class="section section-shaped section-lg">
+      <div class="shape shape-style-1 bg-gradient-primary">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="offset-lg-1 col-lg-5 offset-lg-1">
+            <div class="card bg-secondary shadow border-0">
+              <div class="card-body px-lg-5 py-lg-5">
+                <div class="text-center text-muted mb-4">
+                  <h4>Sign up</h4>
+                </div>
+                {% include "auth/forms/register.html" %} 
+              </div>
+            </div> 
+            <div class="row mt-3">
+              <div class="col-12 text-right">
+                <a href="{{ url_for('auth.login') }}" class="text-white"><small>Have an account already? Login</small></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{% endblock %}
+
+{% block custom_js %} 
+  <script>
+    mixpanel.track("register visit")
+  </script>
+{% endblock %}

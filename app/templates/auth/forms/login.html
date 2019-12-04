@@ -1,0 +1,45 @@
+<div class="card bg-secondary shadow border-0">
+  <div class="card-body px-lg-5 py-lg-5">
+    <div class="text-center text-muted mb-4">
+      <h4>Sign In</h4>
+    </div>
+    <form class="form" method="POST" action="{{ url_for('auth.login') }}">
+      {{ form.csrf_token }}
+      <div class="form-group mb-3">
+        <div class="input-group input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><span data-feather="mail"></span></span>
+          </div>
+          {{ form.email(class_="form-control form-control-lg", placeholder=form.email.label.text) }}
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-alternative">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><span data-feather="key"></span></span>
+          </div>
+          {{ form.password(class_="form-control form-control-lg", placeholder=form.password.label.text) }}
+        </div>
+      </div>
+
+      <!-- <div class="custom-control custom-control-alternative custom-checkbox">
+        <input class="custom-control-input" id="customCheckLogin" type="checkbox">
+        <label class="custom-control-label" for="customCheckLogin">
+          <span>Remember me</span>
+        </label>
+      </div> -->
+
+      <div class="text-center">
+        {{ form.submit(class_="btn btn-lg btn-primary mt-4") }}
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-6">
+    <a href="{{ url_for('auth.login') }}" class="text-white"><small>Forgot password?</small></a>
+  </div>
+  <div class="col-6 text-right">
+    <a href="{{ url_for('auth.register') }}" class="text-white"><small>Create new account</small></a>
+  </div>
+</div>

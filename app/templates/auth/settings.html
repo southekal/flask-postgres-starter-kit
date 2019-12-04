@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %} Settings {% endblock %}
+
+{% block content %}
+  {% include "dashboard/snippets/nav.html" %}
+  <div class="container-fluid">
+    <div class="row">
+
+      {% include "dashboard/snippets/sidebar.html" %}  
+
+      <main role="main" class="col-md-9 col-lg-10 pt-3 px-4">
+        <div class="card">
+          <div class="card-header bg-primary">
+            <h5 class="text-white">Settings</h5>
+          </div>
+          <div class="card-body">
+            <form class="form" method="POST" action="{{ url_for('auth.settings') }}">
+              {{ form.csrf_token }}
+
+              <span class="badge badge-primary">Created: {{ user_record.created_date }}</span><br><br>
+
+              <div class="form-group col-lg-6">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><span data-feather="edit-2"></span></span>
+                  </div>
+                  {{ form.name(class_="form-control form-control-lg", value=user_record.name) }}
+                </div>
+              </div>
+
+              <div class="form-group col-lg-6">
+                {{ form.time_zone(class_="form-control") }}
+                <div class="text-muted font-italic">
+                  <small>helps send you reminders at the right time</small>
+                </div>
+              </div>
+
+              <div class="form-group col-lg-6">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><span data-feather="mail"></span></span>
+                  </div>
+                  {{ form.email(class_="form-control form-control-lg", value=user_record.email, readonly=readonly) }}
+                </div>
+                <small><a href="#">Change Email</a></small><br>
+              </div>
+              
+              <div class="form-group col-lg-6">
+                <small><a href="#">Change Password</a></small><br>
+              </div>
+             
+              <div class="form-group col-lg-6">
+                {{ form.submit(class_="btn btn-lg btn-primary mt-4") }}
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+{% endblock %}
+
+{% block custom_js %}
+  <script>
+    $('select option[value="{{ user_record.time_zone }}"]').attr("selected",true);
+  </script>
+{% endblock %}

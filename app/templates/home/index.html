@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block title %} 
+  title
+{% endblock %}
+
+{% block content %}
+  
+  {% include "nav.html" %}
+
+  <main>
+    <div class="position-relative">
+      <!-- Hero for FREE version -->
+      <!-- <section class="section section-lg section-hero section-shaped"> -->
+      <section>
+        <!-- Background circles -->
+        <div class="shape shape-style-1 shape-light">
+          <span class="span-150"></span>
+          <span class="span-50"></span>
+          <span class="span-50"></span>
+          <span class="span-75"></span>
+          <span class="span-100"></span>
+          <span class="span-75"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+          <span class="span-50"></span>
+          <span class="span-100"></span>
+        </div>
+        <div class="container shape-container d-flex align-items-center py-lg">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="col px-0">
+                <div class="row align-items-center justify-content-center">
+                  <div class="text-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="offset-lg-1 col-lg-5">
+              <h1>Hello World!</h1>
+            </div>
+          </div>
+        </div>
+        <!-- SVG separator -->
+        <div class="separator separator-bottom separator-skew zindex-100">
+          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
+        </div>
+      </section>
+    </div>
+
+    <section class="pb-0 section-components" id="product">
+      <div class="text-center">
+        <div class="py-5 bg-secondary">
+          <div class="container">
+            <h3></h3>
+            <br>
+            <div class="alert alert-primary" role="alert">
+              <h5 class="text-white">
+                <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
+              </h5>
+            </div>
+  
+            <div class="card shadow">
+              <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="alert alert-dark" role="alert">
+              <h4 class="font-weight-bold text-white">
+              </h4>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pb-0 bg-gradient-primary">
+      <div class="container">
+        <div class="row row-grid align-items-center">
+          <div class="offset-lg-2 d-flex px-3">
+            <div>
+              <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                <i class="ni ni-single-copy-04 text-primary"></i>
+              </div>
+            </div>
+            <div class="pl-4">
+              <h4 class="display-3 text-white"></h4>
+            </div>
+          </div>
+          
+          <div class="col-md-6 order-lg-1">
+            <div class="card shadow shadow-lg--hover mt-5">
+              <div class="card-body">
+                <div class="d-flex px-3">
+                  <div>
+                    <div class="icon icon-shape bg-gradient-danger rounded-circle text-white">
+                      <i class="ni ni-satisfied"></i>
+                    </div>
+                  </div>
+                  <div class="pl-4">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card shadow shadow-lg--hover mt-5">
+              <div class="card-body">
+                <div class="d-flex px-3">
+                  <div>
+                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                      <i class="ni ni-active-40"></i>
+                    </div>
+                  </div>
+                  <div class="pl-4">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 order-lg-2">
+            <div class="card shadow shadow-lg--hover mt-5">
+              <div class="card-body">
+                <div class="d-flex px-3">
+                  <div>
+                    <div class="icon icon-shape bg-gradient-default rounded-circle text-white">
+                      <i class="ni ni-briefcase-24"></i>
+                    </div>
+                  </div>
+                  <div class="pl-4">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card shadow shadow-lg--hover mt-5">
+              <div class="card-body">
+                <div class="d-flex px-3">
+                  <div>
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                      <i class="ni ni-email-83"></i>
+                    </div>
+                  </div>
+                  <div class="pl-4">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="text-white text-center" style="padding-top: 30px; padding-bottom: 30px;">Ready to give it a try? 
+          <a href="/register" class="btn btn-lg btn-white btn-icon">
+            <span class="nav-link-inner--text">Get Started</span>
+            <span class="btn-inner--icon">
+              <span data-feather="log-in"></span>
+            </span>
+          </a>
+        </h3> 
+      </div>
+    </section>
+
+    {% include "footer.html" %}
+  
+  {% endblock %}
